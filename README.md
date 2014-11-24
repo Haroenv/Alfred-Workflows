@@ -18,9 +18,10 @@ and delete those from Alfred Preferences.
 * Github Search
 * Golden Ratio Calculator
 * MD5 String Hash
-* Open Dropbox Folder
+* Open Dropbox Folder & iCloud Drive folder
 * Search Scenetime, Comixology, Discgos, Fileinfo, KAT, MRTZC, Steam and The Music Fire
 * Upload to Imgur
+* Package Manager Search
 
 ## Special thanks to:
 [Nolan Chan](github.com/NolanChan), [Luca Bigon](github.com/bigluck), [Tyler Eich](github.com/TylerEich), [will Farrell](https://github.com/willfarrell), [Jack James](https://github.com/surrealroad), [Phillip Hallstrom](https://github.com/phallstrom) and [Kapeli](https://github.com/Kapeli)
