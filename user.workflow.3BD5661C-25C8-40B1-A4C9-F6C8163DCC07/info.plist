@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>tylereich.goldenratio</string>
+	<key>connections</key>
+	<dict>
+		<key>522A20F9-73A5-460D-838A-5DBF091CBAEE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DDCCF7EC-2B4D-4155-9097-4C1BFBFB973E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Tyler Eich</string>
+	<key>description</key>
+	<string>Perform calculations with the Golden Ratio</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Golden Ratio</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>64</integer>
+				<key>keyword</key>
+				<string>golden</string>
+				<key>runningsubtext</key>
+				<string>Processing your input…</string>
+				<key>script</key>
+				<string>python golden.py '{query}'</string>
+				<key>subtext</key>
+				<string>Calculate using the Golden Ratio</string>
+				<key>title</key>
+				<string>Golden Ratio</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>522A20F9-73A5-460D-838A-5DBF091CBAEE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>DDCCF7EC-2B4D-4155-9097-4C1BFBFB973E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>522A20F9-73A5-460D-838A-5DBF091CBAEE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DDCCF7EC-2B4D-4155-9097-4C1BFBFB973E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

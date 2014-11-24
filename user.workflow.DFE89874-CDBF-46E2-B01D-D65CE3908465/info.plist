@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>6E2F9BDC-6E2D-4DEC-9F88-54D83C0C0AB7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9AE99FB7-6A5B-449F-A863-BE99B411EF54</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>ThibMaek</string>
+	<key>description</key>
+	<string>Opens the Dropbox Folder</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open Dropbox</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>dir</string>
+				<key>text</key>
+				<string>Open Dropbox map</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E2F9BDC-6E2D-4DEC-9F88-54D83C0C0AB7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>~/Dropbox</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>9AE99FB7-6A5B-449F-A863-BE99B411EF54</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>6E2F9BDC-6E2D-4DEC-9F88-54D83C0C0AB7</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>9AE99FB7-6A5B-449F-A863-BE99B411EF54</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>thibmaekelbergh.be</string>
+</dict>
+</plist>

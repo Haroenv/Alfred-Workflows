@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Golden Ratio</name>
+  <version>1.0</version>
+  <bundle>tylereich.golden-ratio</bundle>
+  <updated>1398855258</updated>
+  <file>golden_ratio.alfredworkflow</file>
+</workflow>
