@@ -48,7 +48,7 @@ class Repo {
 	}
 	
 	function search($query) {
-		if ( strlen($query) < $this->min_query_length) {
+		if ( count($query) < $this->min_query_length) {
 			$this->w->result(
 				"{$this->id}-min",
 				$query,
@@ -102,9 +102,9 @@ class Repo {
 	function xml() {
 		$this->w->result(
 			"{$this->id}-www",
-			'http://yeoman.io/',
+			'http://yoeman.io/',
 			'Go to the website',
-			'http://yeoman.io',
+			'http://yoeman.io',
 			"icon-cache/{$this->id}.png"
 		);
 		

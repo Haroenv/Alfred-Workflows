@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.customct.SlapToolbox</string>
+	<key>connections</key>
+	<dict>
+		<key>028CF01A-3796-4805-BE31-F45601661B52</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>030A8629-55C8-481A-962D-05BC643605A9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1E33E217-2D33-48B9-82DF-05E81AB3D1D0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1A1499B-6279-4C05-8C5C-7E56CB50D00D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8A0D5E18-961B-422E-9294-06F3D5DF6851</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1A1499B-6279-4C05-8C5C-7E56CB50D00D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Richard Guay</string>
+	<key>description</key>
+	<string>A list of command to work with Slap Editor</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Slap Toolbox</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>slap:editterminal</string>
+				<key>subtext</key>
+				<string>Slap Toolbox</string>
+				<key>text</key>
+				<string>Open the Selected File in Slap in Terminal</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>028CF01A-3796-4805-BE31-F45601661B52</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>
+on runInTerm( command )
+	tell application "Terminal"
+		activate
+		do script command
+	end tell
+end runIniTerm
+
+on alfred_script(q)if application "Path Finder" is frontmost then	tell application "Path Finder"		set pathfinderselection to selection		if pathfinderselection is missing value then			display dialog "Nothing selected" buttons {"Oh, crud..."} default button 1			return		end if		set pathfinderpaths to ""		repeat with i from 1 to count of pathfinderselection			set pfItem to item i of pathfinderselection			-- Corrects for error when hidden files are showing			try				set currentpathfinderpath to (POSIX path of pfItem)				set pathfinderpaths to pathfinderpaths &amp; space ¬					&amp; quoted form of currentpathfinderpath			end try		end repeat		my runInTerm( "slap '" &amp; currentpathfinderpath &amp; "'" )	end tell
+else if application "Finder" is frontmost then	tell application "Finder"		try			set filep to selection as alias list			set finderSelection to POSIX path of filep		on error			display dialog "Nothing selected" buttons ¬			{"Curses, foiled again!..."} default button 1			return		end try	end tell
+	my runInTerm( "slap '" &amp; finderSelection &amp; "'" )end ifend alfred_script
+</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>030A8629-55C8-481A-962D-05BC643605A9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Edit with Slap in Terminal.app</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>8A0D5E18-961B-422E-9294-06F3D5DF6851</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>
+on runInTerm( command )
+	tell application "Terminal"
+		activate
+		do script command
+	end tell
+end runInTerm
+
+on alfred_script(q)	my runInTerm( "slap '" &amp; q &amp; "'" )end alfred_script
+</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>B1A1499B-6279-4C05-8C5C-7E56CB50D00D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>1E33E217-2D33-48B9-82DF-05E81AB3D1D0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow is created by Richard Guay. Visit http://customct.com/alfred-2-workflows for even more fun!
+
+These commands are for working with the slap terminal editor easier. You can learn more about slap at https://github.com/slap-editor/slap
+
+slap:edit
+	Gets the file in Finder or Pathfinder and opens it in iTerm using slap.
+
+slap:install
+	Runs the npm install for slap. It is assumed that node and npm are already installed. The best way to install node is with HomeBrew (http://brew.io).
+
+HotKey is setup to take the current OS X selection and open it in slap.</string>
+	<key>uidata</key>
+	<dict>
+		<key>028CF01A-3796-4805-BE31-F45601661B52</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>030A8629-55C8-481A-962D-05BC643605A9</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>1E33E217-2D33-48B9-82DF-05E81AB3D1D0</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>8A0D5E18-961B-422E-9294-06F3D5DF6851</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>B1A1499B-6279-4C05-8C5C-7E56CB50D00D</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://customct.com/alfred-2-workflows</string>
+</dict>
+</plist>

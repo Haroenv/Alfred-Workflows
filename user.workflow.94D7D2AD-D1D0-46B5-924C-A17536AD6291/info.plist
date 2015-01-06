@@ -522,7 +522,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Package Managers (v2.0)</string>
+	<string>Package Managers (v2)</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -671,6 +671,10 @@ $cache-&gt;clear();</string>
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -768,6 +772,10 @@ echo $repo-&gt;xml();</string>
 				<integer>1</integer>
 				<key>argument</key>
 				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1165,6 +1173,29 @@ echo $repo-&gt;xml();</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>query="{query}";
+
+id=$(echo $query | cut -d "|" -f1)
+url=$(echo $query | cut -d "|" -f2)
+pkgstr=$(echo $query | cut -d "|" -f3)
+
+open $url</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1A806429-BBAB-4227-B0C9-46E96CD3E492</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -1212,14 +1243,14 @@ id=$(echo $query | cut -d "|" -f1)
 url=$(echo $query | cut -d "|" -f2)
 pkgstr=$(echo $query | cut -d "|" -f3)
 
-open $url</string>
+echo $id</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>1A806429-BBAB-4227-B0C9-46E96CD3E492</string>
+			<string>135ECB8C-557A-41D9-BF9A-6439A5EA949E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1258,29 +1289,6 @@ echo $repo-&gt;xml();</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>F1559F42-7F85-4A26-A604-6E31BD686380</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>query="{query}";
-
-id=$(echo $query | cut -d "|" -f1)
-url=$(echo $query | cut -d "|" -f2)
-pkgstr=$(echo $query | cut -d "|" -f3)
-
-echo $id</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>135ECB8C-557A-41D9-BF9A-6439A5EA949E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1582,7 +1590,7 @@ echo $repo-&gt;xml();</string>
 `composer {query}`: PHP [Composer Packages](http://getcomposer.org)
 `docker {query}`: [Docker Images](http://www.docker.io)
 `gems {query}`: [Ruby Gems](http://rubygems.org)
-`gradle {query}`: Java [Gradle Packages](http://www.gradle.org)
+`gradle {query}: Java [Gradle Packages](http://www.gradle.org)
 `grunt {query}`: nodeJS task-runner [Grunt Plugins](http://gruntjs.com)
 `gulp {query}`: nodeJS task-runner [Gulp plugins](http://gulpjs.com)
 `maven {query}`: Java [Maven Libraries](http://mvnrepository.com)
@@ -1604,9 +1612,7 @@ All workflows require constant internet connection.
 
 Workflows can break from time to time due to changes by the provider of the repo. If you notice a workflow stops working, post it at https://github.com/willfarrell/alfred-pkgman-workflow/issues.
 
-All repos have caching enabled to speed up common queries. These caches are refreshed after 14 days and may take longer then expected to return results during update. You can force a cache refresh by running `pkgman cachedb` to re-download the databases (applies to `alcatraz`, `grunt`, `cocoa`). Alternatively you can run `pkgman cleardb` to remove all stored cache, but this isn't recommended. Clearing your cache is recommended after an update if the package manager you use had a bug previously.
-
-The Python Package Index is very slow due to a lack on API and pagination. A min query length has been put in place to help speed this up. You can change it in the script, `$min_query_length = 3`. Perhaps someone with a python background can improve this.</string>
+All repos have caching enabled to speed up common queries. These caches are refreshed after 14 days and may take longer then expected to return results during update. You can force a cache refresh by running `pkgman cachedb` to re-download the databases (applies to `alcatraz`, `grunt`, `cocoa`). Alternatively you can run `pkgman cleardb` to remove all stored cache, but this isn't recommended. Clearing your cache is recommended after an update if the package manager you use had a bug previously.</string>
 	<key>uidata</key>
 	<dict>
 		<key>0376C25E-AF4F-4F76-B9BC-AD9E998CE4A3</key>
@@ -1622,7 +1628,7 @@ The Python Package Index is very slow due to a lack on API and pagination. A min
 		<key>135ECB8C-557A-41D9-BF9A-6439A5EA949E</key>
 		<dict>
 			<key>ypos</key>
-			<real>1780</real>
+			<real>1750</real>
 		</dict>
 		<key>18B0C07D-A101-4267-B306-7925DE8A30C9</key>
 		<dict>
@@ -1632,7 +1638,7 @@ The Python Package Index is very slow due to a lack on API and pagination. A min
 		<key>1A806429-BBAB-4227-B0C9-46E96CD3E492</key>
 		<dict>
 			<key>ypos</key>
-			<real>1640</real>
+			<real>1590</real>
 		</dict>
 		<key>265DF548-7D96-4F94-AB0E-6AD26F31B4A1</key>
 		<dict>
@@ -1747,7 +1753,7 @@ The Python Package Index is very slow due to a lack on API and pagination. A min
 		<key>D882F2C5-CA0E-4D23-B1CC-28AC8AD1DB0E</key>
 		<dict>
 			<key>ypos</key>
-			<real>1570</real>
+			<real>1650</real>
 		</dict>
 		<key>D8F2FDC0-B462-4C50-8A42-9E6A511395A8</key>
 		<dict>
@@ -1772,7 +1778,7 @@ The Python Package Index is very slow due to a lack on API and pagination. A min
 		<key>F1559F42-7F85-4A26-A604-6E31BD686380</key>
 		<dict>
 			<key>ypos</key>
-			<real>1670</real>
+			<real>1750</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

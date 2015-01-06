@@ -114,7 +114,7 @@ class Repo {
 // ****************
 
 /*
-$query = "r";
+$query = "leaflet";
 $repo = new Repo();
 $repo->search($query);
 echo $repo->xml();

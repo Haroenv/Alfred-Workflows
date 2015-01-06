@@ -82,7 +82,7 @@ class Repo {
 		if ( count( $this->w->results() ) == 0) {
 			$this->w->result(
 				"{$this->id}-search",
-				"http://alcatraz.io//{$query}", // UPDATE NEEDED
+				"http://mneorr.github.io/Alcatraz/{$query}",
 				"No {$this->kind} were found that matched \"{$query}\"",
 				"Click to see the results for yourself",
 				"icon-cache/{$this->id}.png"
@@ -96,9 +96,9 @@ class Repo {
 		
 		$this->w->result(
 			$this->id.'-www',
-			'http://alcatraz.io//',
+			'http://mneorr.github.io/Alcatraz/',
 			'Go to the website',
-			'http://alcatraz.io/',
+			'http://mneorr.github.io/Alcatraz',
 			"icon-cache/".$this->id.".png"
 		);
 		

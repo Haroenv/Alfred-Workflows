@@ -148,7 +148,7 @@
 				<key>onlyshowifquerypopulated</key>
 				<true/>
 				<key>output</key>
-				<integer>2</integer>
+				<integer>0</integer>
 				<key>removeextension</key>
 				<false/>
 				<key>sticky</key>

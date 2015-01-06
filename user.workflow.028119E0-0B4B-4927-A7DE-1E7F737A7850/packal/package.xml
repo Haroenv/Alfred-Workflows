@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Slap Toolbox</name>
+  <version>1.2</version>
+  <bundle>com.customct.SlapToolbox</bundle>
+  <updated>1416475753</updated>
+  <file>slaptoolbox.alfredworkflow</file>
+</workflow>
