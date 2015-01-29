@@ -24,4 +24,4 @@ and delete those from Alfred Preferences.
 * Package Manager Search
 
 ## Special thanks to:
-[Nolan Chan](github.com/NolanChan), [Luca Bigon](github.com/bigluck), [Tyler Eich](github.com/TylerEich), [will Farrell](https://github.com/willfarrell), [Jack James](https://github.com/surrealroad), [Phillip Hallstrom](https://github.com/phallstrom) and [Kapeli](https://github.com/Kapeli)
+[Nolan Chan](https://github.com/NolanChan), [Luca Bigon](https://github.com/bigluck), [Tyler Eich](https://github.com/TylerEich), [will Farrell](https://github.com/willfarrell), [Jack James](https://github.com/surrealroad), [Phillip Hallstrom](https://github.com/phallstrom) and [Kapeli](https://github.com/Kapeli)
